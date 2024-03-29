@@ -10,12 +10,12 @@ function solve() {
       document.querySelectorAll('table tbody tr').forEach(row => {
          match = false
          row.querySelectorAll('td').forEach(cell => {
-            if (cell.textContent.toLowerCase().includes(document.querySelector('#searchField').value.toLowerCase())) {
+            if (cell.textContent.includes(document.querySelector('#searchField').value)) {
                match = true
                return
             }
          })
-         if (!match && row.textContent.toLowerCase().includes(document.querySelector('#searchField').value.toLowerCase())) {
+         if (!match && row.textContent.includes(document.querySelector('#searchField').value)) {
             match = true
          }
          if (match) {

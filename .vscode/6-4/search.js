@@ -1,7 +1,7 @@
 function search() {
    let matches = 0;
    document.querySelectorAll("#towns li").forEach(town => {
-       if (town.textContent.toLowerCase().includes(document.getElementById("searchText").value.toLowerCase())) {
+       if ((town.textContent.toLowerCase().includes(document.getElementById("searchText").value.toLowerCase())) && (document.getElementById("searchText").value != '')) {
            matches++;
            town.innerHTML = town.textContent.replace(RegExp(document.getElementById("searchText").value, 'i'), match => `<strong>${match}</strong>`);
            town.style.textDecoration = "underline";
